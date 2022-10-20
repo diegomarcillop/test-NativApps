@@ -37,6 +37,7 @@ export const style = StyleSheet.create({
   input: {
     fontFamily: fonts.paragraph,
     fontSize: 14,
+    color: colors.Black700,
     paddingLeft: 10,
     borderWidth: 1,
     borderColor: colors.Gray300,
