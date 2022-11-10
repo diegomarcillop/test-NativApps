@@ -4,9 +4,9 @@ const key = '@reports_storage';
 
 export const save = async info => {
   try {
-    const data = await getAll();
+    let data = await getAll();
     if (data) {
-      data.push(info);
+      data = [info, ...data];
       await AsyncStorage.setItem(key, JSON.stringify(data));
     } else {
       await AsyncStorage.setItem(key, JSON.stringify([info]));

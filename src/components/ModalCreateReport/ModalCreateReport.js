@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import {launchCamera} from 'react-native-image-picker';
+import {useTranslation} from 'react-i18next';
 
 import {Button} from '../../components/Button/Button';
 import {style} from './ModalCreateReport.style';
@@ -32,6 +33,7 @@ const options = {
 
 export const ModalCreateReport = ({visible, setVisible}) => {
   const [form, setForm] = useState(InitialState);
+  const {t, i18n} = useTranslation();
 
   useEffect(() => {
     setForm(InitialState);
@@ -99,7 +101,7 @@ export const ModalCreateReport = ({visible, setVisible}) => {
           </View>
           <View style={style.actions}>
             <Button
-              name="Crear"
+              name={t('button.create_report')}
               disabled={!form.description}
               onPress={onFinish}
             />
